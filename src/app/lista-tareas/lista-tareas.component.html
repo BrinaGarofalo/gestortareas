@@ -1,18 +1,25 @@
 <h1>Gestor De Tareas</h1>
-<form>
-    <div>
-        <input type="text" placeholder="Agregar Tarea" required>
-        <button >Agregar</button>
-      </div>
+  <div>
+    <input type="text" [(ngModel)]="nuevaTarea" required>
+    <button (click)="agregarTarea()">Agregar</button>
+  </div>
 
-  <ul>
-    <li >
-      <input type="checkbox">
-      <span></span>
-      <button >Eliminar</button>
-    </li>
-  </ul>
-</form>
+  <div *ngIf="tarea.length > 0">
+    <ul>
+      <li *ngFor="let task of tarea" [class.completed]="task.completed">
+        <input type="checkbox" [(ngModel)]="task.completed" (change)="cambioTarea(task)">
+        <span>{{ task.titulo }}</span>
+        <button (click)="borrarTarea(task)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
 
-<div>No tasks available.</div>
+  <div *ngIf="tarea.length === 0">No Existe Tarea</div>
 
+        
+     
+   
+  
+ 
+  
+  
