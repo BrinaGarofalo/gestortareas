@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tarea } from '../interfaz/tareainterfaz'; 
-
-
+import { Tarea } from '../interfaz/tareainterfaz';
 
 @Component({
   selector: 'app-lista-tareas',
@@ -11,22 +9,30 @@ import { Tarea } from '../interfaz/tareainterfaz';
 export class ListaTareasComponent implements OnInit {
   tarea: Tarea[] = [];
   nuevaTarea: string = '';
+  tareaCompletadas: Tarea[] = [];
+  errorMensaje: string = '';
 
   ngOnInit() {
     this.cargarLocalStorage();
+    this.actualizarListasTareas();
   }
 
   agregarTarea() {
     if (this.nuevaTarea.trim() !== '') {
-      const newTask: Tarea = { titulo: this.nuevaTarea.trim(), completed: false };
-      this.tarea.push(newTask);
-      this.guardarLocalStorage();
+      this.errorMensaje = '';
+      this.tarea.push({
+        titulo: this.nuevaTarea,
+        completed: false
+      });
       this.nuevaTarea = '';
+    } else {
+      this.errorMensaje = 'Por favor, ingresa los datos de la nueva tarea';
     }
   }
 
   cambioTarea(task: Tarea) {
     this.guardarLocalStorage();
+    this.actualizarListasTareas();
   }
 
   borrarTarea(task: Tarea) {
@@ -34,6 +40,7 @@ export class ListaTareasComponent implements OnInit {
     if (index !== -1) {
       this.tarea.splice(index, 1);
       this.guardarLocalStorage();
+      this.actualizarListasTareas();
     }
   }
 
@@ -47,6 +54,8 @@ export class ListaTareasComponent implements OnInit {
       this.tarea = JSON.parse(guardaTarea);
     }
   }
+
+  actualizarListasTareas() {
+    this.tareaCompletadas = this.tarea.filter((task) => task.completed);
+  }
 }
-
-
