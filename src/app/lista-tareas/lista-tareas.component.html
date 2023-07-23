@@ -1,7 +1,7 @@
 <div class="containerTareas">
   <h1>GESTOR DE TAREAS</h1>
   <div>
-    <input type="text" [(ngModel)]="nuevaTarea" required placeholder="Título...">
+    <input type="text" [(ngModel)]="nuevaTarea" placeholder="Título..." required >
     <button (click)="agregarTarea()">Agregar</button>
   </div>
   
@@ -26,13 +26,16 @@
     La lista de tareas está vacía.
   </div>
 
+
   <div *ngIf="tareaCompletadas.length > 0 && tareaCompletadas.length !== tarea.length">
     <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tarea(s) completada(s)</p>
   </div>
 
+
   <div *ngIf="tareaCompletadas.length === tarea.length && tarea.length > 0">
     <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tareas completadas.</p>
   </div>
+
 
   <div class="seguir" *ngIf="tareaCompletadas.length === 0 && tarea.length === 0">
     0 de 0 tareas completadas

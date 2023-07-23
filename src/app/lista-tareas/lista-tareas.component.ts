@@ -33,11 +33,13 @@ export class ListaTareasComponent implements OnInit {
     }
   }
 
+
   cambioTarea(task: Tarea) {
     task.completed = !task.completed;
     this.guardarLocalStorage();
     this.actualizarListasTareas();
   }
+
 
   borrarTarea(task: Tarea) {
     const index = this.tarea.indexOf(task);
@@ -52,12 +54,14 @@ export class ListaTareasComponent implements OnInit {
     localStorage.setItem('tarea', JSON.stringify(this.tarea));
   }
 
+
   cargarLocalStorage() {
     const guardaTarea = localStorage.getItem('tarea');
     if (guardaTarea) {
       this.tarea = JSON.parse(guardaTarea);
     }
   }
+
 
   actualizarListasTareas() {
     this.tareaPendientes = this.tarea.filter((task) => !task.completed);
