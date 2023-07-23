@@ -1,27 +1,21 @@
-# GestorTareas
+# Gestor Tareas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+ Es una herramienta utilizada para coordinar y hacer seguimiento de las actividades a realizar.
 
-## Development server
+## Objetivo 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La gestión de tareas es más que una lista de pendientes. Puedes dar seguimiento a las tareas de principio a fin, delegar subtareas a los compañeros de equipo y establecer plazos para asegurarse de que los proyectos se lleven a cabo a tiempo.
 
-## Code scaffolding
+## Beneficios
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Evita una carga de trabajo excesiva. Podrás evitar cargas excesivas de trabajo o superposiciones de eventos, compensar las tareas de cada día y la de cada miembro del equipo de trabajo.
+* Prioriza fácilmente las tareas de cada día de la semana para así focalizar tu atención en las tareas más relevantes. De esta manera, podrás cumplir con los plazos del proyecto o los establecidos con el cliente. Un gestor de tareas te permite multiplicar en gran medida la eficacia y la concentración que puedas obtener.
+* Fomenta e impulsa el trabajo colaborativo y disminuye los cuellos de botella en tu empresa. Esto lo lograrás al reunir en un mismo programa toda la información y los datos que se necesitan de cada actividad o proyecto, compartir ideas, agregar comentarios y realizar un seguimiento general de las actividades y sus plazos establecidos.
+* Optimiza la productividad individual y de grupos. Esto, gracias a que el gestor de tareas te permite tener una clara visualización de tareas y proyectos. También reduce las dudas en cuanto a los plazos, la solicitud de documentos y la falta de concentración. Un gestor de tareas focaliza a cada empleado dentro de su tarea diaria.
+* Ve qué es lo que hacen tus trabajadores en tiempo real. Un gestor de tareas te permite visualizar los proyectos o las tareas que están desarrollando tus empleados en tiempo real, sin importar en dónde se encuentren ni a qué hora lo estés revisando. Sin duda, la mejor herramienta para el trabajo remoto.
+  Aquí se muestra nuestra interfaz:
+  
+![pagInicial](https://github.com/BrinaGarofalo/gestortareas/assets/124687633/cee224ac-2478-4385-b95c-0d225f644943)
 
-## Build
+![listaTarea](https://github.com/BrinaGarofalo/gestortareas/assets/124687633/5f1470dd-fa1c-419d-9cd4-680baae9b149)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,0 +1,43 @@
+<div class="containerTareas">
+  <h1>GESTOR DE TAREAS</h1>
+  <div>
+    <input type="text" [(ngModel)]="nuevaTarea" placeholder="Título..." required >
+    <button (click)="agregarTarea()">Agregar</button>
+  </div>
+  
+<div *ngIf="errorMensaje" class="error-message">
+  Por favor, ingresa los datos de la nueva tarea.
+</div>
+
+  <div *ngIf="tarea.length > 0">
+    <ul>
+      <li *ngFor="let task of tarea">
+        <div class="cambio-container">
+          <input type="checkbox" (change)="cambioTarea(task)" [checked]="task.completed">
+          <span [class.completed-task]="task.completed">{{ task.titulo }}</span>
+          <button (click)="borrarTarea(task)">Eliminar</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  
+  <div class="notarea" *ngIf="tarea.length === 0">
+    La lista de tareas está vacía.
+  </div>
+
+
+  <div *ngIf="tareaCompletadas.length > 0 && tareaCompletadas.length !== tarea.length">
+    <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tarea(s) completada(s)</p>
+  </div>
+
+
+  <div *ngIf="tareaCompletadas.length === tarea.length && tarea.length > 0">
+    <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tareas completadas.</p>
+  </div>
+
+
+  <div class="seguir" *ngIf="tareaCompletadas.length === 0 && tarea.length === 0">
+    0 de 0 tareas completadas
+  </div>
+</div>
