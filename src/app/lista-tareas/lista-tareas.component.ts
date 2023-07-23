@@ -9,9 +9,9 @@ import { Tarea } from '../interfaz/tareainterfaz';
 export class ListaTareasComponent implements OnInit {
   tarea: Tarea[] = [];
   nuevaTarea: string = '';
+  tareaPendientes: Tarea[] = [];
   tareaCompletadas: Tarea[] = [];
   errorMensaje: string = '';
-  mostrarNoExistenTareas: boolean = false;
 
   ngOnInit() {
     this.cargarLocalStorage();
@@ -34,6 +34,7 @@ export class ListaTareasComponent implements OnInit {
   }
 
   cambioTarea(task: Tarea) {
+    task.completed = !task.completed;
     this.guardarLocalStorage();
     this.actualizarListasTareas();
   }
@@ -59,7 +60,7 @@ export class ListaTareasComponent implements OnInit {
   }
 
   actualizarListasTareas() {
+    this.tareaPendientes = this.tarea.filter((task) => !task.completed);
     this.tareaCompletadas = this.tarea.filter((task) => task.completed);
-    this.mostrarNoExistenTareas = this.tarea.length === 0 && this.tareaCompletadas.length === 0;
   }
 }
