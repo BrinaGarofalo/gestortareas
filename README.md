@@ -13,4 +13,9 @@ La gestión de tareas es más que una lista de pendientes. Puedes dar seguimient
 * Fomenta e impulsa el trabajo colaborativo y disminuye los cuellos de botella en tu empresa. Esto lo lograrás al reunir en un mismo programa toda la información y los datos que se necesitan de cada actividad o proyecto, compartir ideas, agregar comentarios y realizar un seguimiento general de las actividades y sus plazos establecidos.
 * Optimiza la productividad individual y de grupos. Esto, gracias a que el gestor de tareas te permite tener una clara visualización de tareas y proyectos. También reduce las dudas en cuanto a los plazos, la solicitud de documentos y la falta de concentración. Un gestor de tareas focaliza a cada empleado dentro de su tarea diaria.
 * Ve qué es lo que hacen tus trabajadores en tiempo real. Un gestor de tareas te permite visualizar los proyectos o las tareas que están desarrollando tus empleados en tiempo real, sin importar en dónde se encuentren ni a qué hora lo estés revisando. Sin duda, la mejor herramienta para el trabajo remoto.
+  Aquí se muestra nuestra interfaz:
+  
+![pagInicial](https://github.com/BrinaGarofalo/gestortareas/assets/124687633/cee224ac-2478-4385-b95c-0d225f644943)
+
+![listaTarea](https://github.com/BrinaGarofalo/gestortareas/assets/124687633/5f1470dd-fa1c-419d-9cd4-680baae9b149)
 
