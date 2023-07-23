@@ -2,12 +2,13 @@ h1 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
-  color: #333;
+  color: #095cc9;
 }
 
 div {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
@@ -15,60 +16,105 @@ input[type="text"] {
   flex: 1;
   padding: 8px;
   font-size: 16px;
+  border-radius: 3px;
+  margin-right: 10px;
 }
-
-button {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
 
 .error-message {
-  color: #FF0000;
+  color: #0a0101;
+  background-color: #f1afaf43;
   margin-bottom: 10px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th,
-td {
+  border: #f89090 solid 2px;
+  border-radius: 5px;
+  width: 350px;
+  height: 25px;
   padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-
-input[type="checkbox"] {
-  margin-right: 10px;
 }
 
 .completed-task {
   text-decoration: line-through;
 }
 
-
-div[ngIf="tarea.length === 0 && tareaCompletadas.length === 0"] {
-  text-align: center;
-  font-size: 18px;
-  color: #666;
+.seguir {
+  padding: 8px 16px;
+  font-size: 16px;
+  width: 250px;
+  height: 25px;
+  background-color: #edf0f376;
+  color: #170e0e;
+  border-radius: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
-div[ngIf="tareaCompletadas.length === tarea.length && tarea.length > 0"] {
-  text-align: center;
-  font-size: 18px;
-  color: green;
+.borrar {
+  padding: 8px 16px;
+  font-size: 16px;
+  width: 100px;
+  height: 35px;
+  background-color: #2261a5;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 100px;
 }
 
+.agrega {
+  padding: 8px 16px;
+  font-size: 16px;
+  width: 100px;
+  height: 35px;
+  background-color: #2261a5;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 
-div[ngIf="tareaCompletadas.length > 0 && tareaCompletadas.length < tarea.length"] {
-  text-align: center;
-  font-size: 18px;
-  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  width: 800px;
+  height: 80px;
+  background-color: #bcc5ce80;
+  color: #0e0a0a;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  justify-content:space-between;
+  margin: 15px;
+  padding: 0 15px;
+}
+
+span{
+  display: flex;
+  justify-content: center;
+  margin-right: 250px;
+  
+}
+.notarea{
+  color: #0a0101;
+  background-color: #aff1ca43;
+  margin-bottom: 10px;
+  border: #85efb6e8 solid 2px;
+  border-radius: 5px;
+  width: 350px;
+  height: 25px;
+  padding: 8px;
+}
+.completa{
+  color: #0a0101;
+  background-color: #aff1ca43;
+  margin-bottom: 10px;
+  border: #85efb6e8 solid 2px;
+  border-radius: 5px;
+  width: 350px;
+  height: 25px;
+  padding: 8px;
 }

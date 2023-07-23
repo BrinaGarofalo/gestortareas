@@ -11,6 +11,7 @@ export class ListaTareasComponent implements OnInit {
   nuevaTarea: string = '';
   tareaCompletadas: Tarea[] = [];
   errorMensaje: string = '';
+  mostrarNoExistenTareas: boolean = false;
 
   ngOnInit() {
     this.cargarLocalStorage();
@@ -25,6 +26,8 @@ export class ListaTareasComponent implements OnInit {
         completed: false
       });
       this.nuevaTarea = '';
+      this.actualizarListasTareas(); 
+      this.guardarLocalStorage();
     } else {
       this.errorMensaje = 'Por favor, ingresa los datos de la nueva tarea';
     }
@@ -57,5 +60,6 @@ export class ListaTareasComponent implements OnInit {
 
   actualizarListasTareas() {
     this.tareaCompletadas = this.tarea.filter((task) => task.completed);
+    this.mostrarNoExistenTareas = this.tarea.length === 0 && this.tareaCompletadas.length === 0;
   }
 }

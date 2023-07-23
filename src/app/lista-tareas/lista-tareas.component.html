@@ -1,7 +1,7 @@
-<h1>Gestor De Tareas</h1>
+<h1>GESTOR DE TAREAS</h1>
 <div>
-  <input type="text" [(ngModel)]="nuevaTarea" placeholder="Nueva Tarea"  required >
-  <button (click)="agregarTarea()">Agregar</button>
+  <input type="text" [(ngModel)]="nuevaTarea" placeholder="Nueva Tarea" required>
+  <button class="agrega" (click)="agregarTarea()">Agregar</button>
 </div>
 
 <div *ngIf="errorMensaje" class="error-message">
@@ -13,20 +13,19 @@
     <li *ngFor="let task of tarea" [class.completed]="task.completed">
       <input type="checkbox" [(ngModel)]="task.completed" (change)="cambioTarea(task)">
       <span [ngClass]="{'completed-task': task.completed}">{{ task.titulo }}</span>
-      <button (click)="borrarTarea(task)">Eliminar</button>
+      <button class="borrar" (click)="borrarTarea(task)">Eliminar</button>
     </li>
   </ul>
 </div>
 
-<div *ngIf="tareaCompletadas.length > 0">
-  
+<div *ngIf="tareaCompletadas.length > 0 || mostrarNoExistenTareas">
+  <div class="notarea" *ngIf="tarea.length === 0 && tareaCompletadas.length === 0 && mostrarNoExistenTareas">No Existen Tareas</div>
 
-<div *ngIf="tarea.length === 0 && tareaCompletadas.length === 0">No Existe Tarea</div>
+  <div class="completa" *ngIf="tareaCompletadas.length === tarea.length && tarea.length > 0">
+    <p>Todas las tareas están completas.</p>
+  </div>
 
-<div *ngIf="tareaCompletadas.length === tarea.length && tarea.length > 0">
-  <p>Todas las tareas están completadas.</p>
-</div>
-
-<div *ngIf="tareaCompletadas.length > 0 && tareaCompletadas.length < tarea.length">
-  <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tarea(s) completada(s).</p>
+  <div class="seguir" *ngIf="tareaCompletadas.length > 0 && tareaCompletadas.length < tarea.length">
+    <p>{{ tareaCompletadas.length }} de {{ tarea.length }} tarea(s) completada(s).</p>
+  </div>
 </div>
