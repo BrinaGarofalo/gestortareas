@@ -12,6 +12,8 @@ export class ListaTareasComponent implements OnInit {
   tareaPendientes: Tarea[] = [];
   tareaCompletadas: Tarea[] = [];
   errorMensaje: string = '';
+ 
+
 
   ngOnInit() {
     this.cargarLocalStorage();
@@ -48,6 +50,11 @@ export class ListaTareasComponent implements OnInit {
       this.guardarLocalStorage();
       this.actualizarListasTareas();
     }
+  }
+  borrarTodo() {
+    this.tarea = [];
+    this.guardarLocalStorage();
+    this.actualizarListasTareas();
   }
 
   guardarLocalStorage() {
