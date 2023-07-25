@@ -16,12 +16,17 @@
         <div class="cambio-container">
           <input type="checkbox" (change)="cambioTarea(task)" [checked]="task.completed">
           <span [class.completed-task]="task.completed">{{ task.titulo }}</span>
-          <button (click)="borrarTarea(task)">Eliminar</button>
+          <button (click)="borrarTarea(task)">Eliminar</button> 
         </div>
       </li>
     </ul>
+  
+  <div>
+    <button (click)="borrarTodo()">Borrar Todo</button>
   </div>
+</div>
 
+ 
 
   <div class="notarea" *ngIf="tarea.length === 0">
     La lista de tareas está vacía.
